@@ -6,17 +6,63 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+h3, p {
+  text-align: center;
+}
+
+p, #form {
+  margin-top: 2em;
+}
+
+.about-us {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+  text-align: left;
+}
+
+#submit {
+  width: 90px;
+  padding: 8px 15px;
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.section {
+  width: 100%;
+  padding-top: 220px;
+}
+
 #header-img {
   width: 200px;
 }
 
+#video {
+  display: block;
+  margin: 0 auto;
+}
+
+.book-cover {
+  width: 350px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 nav {
   display: flex;
+  position: fixed;
+  width: 100%;
+  height: 200px;
   justify-content: space-around;
   align-items: center;
   min-height: 8vh;
-  background-color: #5d4954;
-  font-family: 'Poppins', sans-serif;
+  background-color: #12256b;
+  text-transform: uppercase;
 }
 
 .nav-links {
@@ -36,6 +82,7 @@ nav {
 
 .burger {
   display: none;
+  cursor: pointer;
 }
 
 .burger div {
@@ -43,6 +90,7 @@ nav {
   height: 3px;
   background-color: rgb(226, 226, 226);
   margin: 5px;
+  transition: all 0.5s ease;
 }
 
 @media screen and (max-width: 900px) {
@@ -61,12 +109,14 @@ nav {
     right: 0px;
     height: 70vh;
     top: 30vh;
-    background-color: #5d4954;
+    background-color: #12256b;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 50%;
+    opacity: 0.7;
     transform: translateX(100%);
+    transition: transform 0.5s ease-in;
   }
   
   .nav-links li {
@@ -76,4 +126,40 @@ nav {
   .burger {
     display: block;
   }
+}
+
+.nav-active {
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px,6px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px,-6px);
+}
+
+input[type=email] {
+  padding: 12px 20px;
+  margin: 8px auto;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-width: 400px;
 }
